@@ -1,0 +1,4 @@
+!.storybook
+!.jest
+!.next
+node_modules
