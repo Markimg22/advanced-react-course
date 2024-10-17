@@ -10,7 +10,14 @@ const config: Config = {
     testEnvironment: 'jsdom',
     testPathIgnorePatterns: ['/node_modules/', '/.next/'],
     collectCoverage: true,
-    collectCoverageFrom: ['src/**/*.ts(x)?', '!src/app/**', '!src/lib/registry.tsx', '!src/types/**', '!src/styles/**'],
+    collectCoverageFrom: [
+        'src/**/*.ts(x)?',
+        '!src/app/**',
+        '!src/lib/registry.tsx',
+        '!src/types/**',
+        '!src/styles/**',
+        '!src/**/stories.tsx'
+    ],
     setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
     modulePaths: ['<rootDir>/src/'],
     transform: {
