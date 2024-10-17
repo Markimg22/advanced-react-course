@@ -1,0 +1,34 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Run Test Watch Debugger",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "run",
+                "test:watch"
+            ],
+            "skipFiles": [
+                "<node_internals>/**/**"
+            ],
+            "console": "integratedTerminal"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Run Dev Debugger",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "run",
+                "dev"
+            ],
+            "skipFiles": [
+                "<node_internals>/**/**"
+            ],
+            "console": "integratedTerminal"
+        },
+    ],
+    "compounds": []
+}
