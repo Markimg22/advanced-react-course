@@ -7,4 +7,8 @@ export default {
     component: Logo
 } as Meta<LogoProps>;
 
-export const Default: StoryObj<typeof Logo> = {};
+export const Default: StoryObj<typeof Logo> = {
+    args: {
+        color: 'black'
+    }
+};
