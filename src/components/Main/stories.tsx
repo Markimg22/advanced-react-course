@@ -7,4 +7,4 @@ export default {
     component: Main
 } as Meta;
 
-export const Default: StoryObj = {};
+export const Default: StoryObj<typeof Main> = {};
