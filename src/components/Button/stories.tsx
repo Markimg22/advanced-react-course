@@ -1,5 +1,5 @@
 import { StoryObj, Meta } from '@storybook/react';
-import { AddShoppingCart } from '@styled-icons/material-outlined';
+import { AddShoppingCart } from '@styled-icons/material-outlined/AddShoppingCart';
 
 import { Button, ButtonProps } from '@/components/Button';
 
