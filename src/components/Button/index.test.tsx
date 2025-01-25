@@ -47,4 +47,14 @@ describe('<Button />', () => {
         expect(screen.getByText(/Any Text/i)).toBeInTheDocument();
         expect(screen.getByTestId('icon')).toBeInTheDocument();
     });
+
+    it('should render Button as link', () => {
+        renderWithTheme(
+            <Button as="a" href="/any-link">
+                Any Text
+            </Button>
+        );
+
+        expect(screen.getByRole('link', { name: /any text/i })).toHaveAttribute('href', '/any-link');
+    });
 });

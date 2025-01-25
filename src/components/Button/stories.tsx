@@ -29,3 +29,12 @@ export const WithIcon: StoryObj<typeof Button> = {
         icon: <AddShoppingCart />
     }
 };
+
+export const AsLink: StoryObj<typeof Button> = {
+    args: {
+        as: 'a',
+        href: '/any-link',
+        size: 'large',
+        children: 'Buy Now'
+    }
+};
