@@ -7,15 +7,14 @@ export default {
     title: 'Button',
     component: Button,
     argTypes: {
-        children: {
-            control: 'text'
-        },
-        icon: {
-            control: false
-        }
+        children: { control: 'text' },
+        icon: { control: false },
+        as: { control: false },
+        href: { control: false }
     },
     args: {
-        children: 'Buy Now'
+        children: 'Buy Now',
+        size: 'medium'
     }
 } as Meta<ButtonProps>;
 
@@ -23,7 +22,6 @@ export const Default: StoryObj<typeof Button> = {};
 
 export const WithIcon: StoryObj<typeof Button> = {
     args: {
-        size: 'small',
         icon: <AddShoppingCart />
     }
 };
@@ -31,7 +29,6 @@ export const WithIcon: StoryObj<typeof Button> = {
 export const AsLink: StoryObj<typeof Button> = {
     args: {
         as: 'a',
-        href: '/any-link',
-        size: 'large'
+        href: '/any-link'
     }
 };

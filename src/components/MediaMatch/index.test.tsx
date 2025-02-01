@@ -28,11 +28,7 @@ describe('<MediaMatch />', () => {
     });
 
     it('should show or hide based on the media passed', () => {
-        expect(desktopHeading.parentElement).toHaveStyleRule('display', 'block', {
-            media: '(min-width:  768px)'
-        });
-        expect(mobileHeading.parentElement).toHaveStyleRule('display', 'block', {
-            media: '(max-width:  768px)'
-        });
+        expect(desktopHeading.parentElement).toHaveStyleRule('display', 'block', { media: '(min-width:  768px)' });
+        expect(mobileHeading.parentElement).toHaveStyleRule('display', 'block', { media: '(max-width:  768px)' });
     });
 });
