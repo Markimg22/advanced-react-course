@@ -9,8 +9,10 @@ const config: StorybookConfig = {
         options: {}
     },
     webpackFinal: (config) => {
+        // TODO: configuração não está funcionando
         config.resolve?.modules?.push(`${process.cwd()}/src`);
         return config;
     }
 };
+
 export default config;
