@@ -9,12 +9,12 @@ export default {
         children: {
             control: 'text'
         }
+    },
+    args: {
+        children: 'Most Populars',
+        color: 'black',
+        size: 'medium'
     }
 } as Meta<HeadingProps>;
 
-export const Default: StoryObj<typeof Heading> = {
-    args: {
-        children: 'Most Populars',
-        color: 'black'
-    }
-};
+export const Default: StoryObj<typeof Heading> = {};

@@ -4,11 +4,11 @@ import { Logo, LogoProps } from '@/components/Logo';
 
 export default {
     title: 'Logo',
-    component: Logo
+    component: Logo,
+    args: {
+        color: 'black',
+        size: 'normal'
+    }
 } as Meta<LogoProps>;
 
-export const Default: StoryObj<typeof Logo> = {
-    args: {
-        color: 'black'
-    }
-};
+export const Default: StoryObj<typeof Logo> = {};
