@@ -1,5 +1,7 @@
 import { Button } from '@/components/Button';
 
+import { Ribbon, RibbonColors, RibbonSizes } from '@/components/Ribbon';
+
 import * as S from './styles';
 
 export type BannerProps = {
@@ -8,9 +10,21 @@ export type BannerProps = {
     subtitle: string;
     buttonLabel: string;
     buttonLink: string;
+    ribbon?: React.ReactNode;
+    ribbonSize?: RibbonSizes;
+    ribbonColor?: RibbonColors;
 };
 
-export function Banner({ img, title, subtitle, buttonLabel, buttonLink }: BannerProps): JSX.Element {
+export function Banner({
+    img,
+    title,
+    subtitle,
+    buttonLabel,
+    buttonLink,
+    ribbon,
+    ribbonColor = 'primary',
+    ribbonSize = 'normal'
+}: BannerProps): JSX.Element {
     return (
         <S.Wrapper>
             <S.Image src={img} role="img" aria-label={title} />
@@ -21,6 +35,11 @@ export function Banner({ img, title, subtitle, buttonLabel, buttonLink }: Banner
                     {buttonLabel}
                 </Button>
             </S.Caption>
+            {!!ribbon && (
+                <Ribbon color={ribbonColor} size={ribbonSize}>
+                    {ribbon}
+                </Ribbon>
+            )}
         </S.Wrapper>
     );
 }
