@@ -17,9 +17,9 @@ describe('<Highlight />', () => {
     it('should render headings and button', () => {
         renderWithTheme(<Highlight {...props} />);
 
-        expect(screen.getByRole('heading', { name: 'Heading 1' })).toBeInTheDocument();
-        expect(screen.getByRole('heading', { name: 'Heading 2' })).toBeInTheDocument();
-        expect(screen.getByRole('link', { name: 'Buy Now' })).toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: props.title })).toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: props.subtitle })).toBeInTheDocument();
+        expect(screen.getByRole('link', { name: props.buttonLabel })).toBeInTheDocument();
     });
 
     it('should render background image', () => {

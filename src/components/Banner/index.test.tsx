@@ -15,9 +15,9 @@ describe('<Banner />', () => {
     it('should render correctly', () => {
         const { container } = renderWithTheme(<Banner {...props} />);
 
-        expect(screen.getByRole('heading', { name: 'Any Title' })).toBeInTheDocument();
-        expect(screen.getByRole('heading', { name: 'Any Subtitle' })).toBeInTheDocument();
-        expect(screen.getByRole('img', { name: 'Any Title' })).toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: props.title })).toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: props.subtitle })).toBeInTheDocument();
+        expect(screen.getByRole('img', { name: props.title })).toBeInTheDocument();
 
         expect(container.firstChild).toMatchSnapshot();
     });
