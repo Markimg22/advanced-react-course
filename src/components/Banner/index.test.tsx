@@ -2,6 +2,7 @@ import { screen } from '@testing-library/react';
 
 import { Banner, BannerProps } from '@/components/Banner';
 import { renderWithTheme } from '@/utils/tests/helpers';
+import theme from '@/styles/theme';
 
 const props: BannerProps = {
     title: 'Any Title',
@@ -28,7 +29,7 @@ describe('<Banner />', () => {
         const ribbon = screen.getByText('Any Text Ribbon');
 
         expect(ribbon).toBeInTheDocument();
-        expect(ribbon).toHaveStyle({ backgroundColor: '#3CD3C1' });
-        expect(ribbon).toHaveStyle({ height: '2.6rem', fontSize: '1.2rem' });
+        expect(ribbon).toHaveStyle({ backgroundColor: theme.colors.secondary });
+        expect(ribbon).toHaveStyle({ height: '2.6rem', fontSize: theme.font.sizes.xsmall });
     });
 });

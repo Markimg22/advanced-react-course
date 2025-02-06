@@ -3,17 +3,20 @@ import { AddShoppingCart } from '@styled-icons/material-outlined/AddShoppingCart
 
 import { Button } from '@/components/Button';
 import { renderWithTheme } from '@/utils/tests/helpers';
+import theme from '@/styles/theme';
 
 describe('<Button />', () => {
     it('should render the medium size by default', () => {
         const { container } = renderWithTheme(<Button>Any Text</Button>);
 
-        expect(container.firstChild).toMatchSnapshot();
+        expect(screen.getByRole('button', { name: 'Any Text' })).not.toHaveStyle({ width: '100%' });
         expect(screen.getByRole('button', { name: 'Any Text' })).toHaveStyle({
             height: '4rem',
-            padding: '0.8rem 3.2rem',
-            'font-size': '1.4rem'
+            padding: `${theme.spacings.xxsmall} ${theme.spacings.medium}`,
+            fontSize: theme.font.sizes.small
         });
+
+        expect(container.firstChild).toMatchSnapshot();
     });
 
     it('should render the small size', () => {
@@ -21,7 +24,7 @@ describe('<Button />', () => {
 
         expect(screen.getByRole('button', { name: 'Any Text' })).toHaveStyle({
             height: '3rem',
-            'font-size': '1.2rem'
+            fontSize: theme.font.sizes.xsmall
         });
     });
 
@@ -30,14 +33,19 @@ describe('<Button />', () => {
 
         expect(screen.getByRole('button', { name: 'Any Text' })).toHaveStyle({
             height: '5rem',
-            padding: '0.8rem 4.8rem',
-            'font-size': '1.6rem'
+            padding: `${theme.spacings.xxsmall} ${theme.spacings.xlarge}`,
+            fontSize: theme.font.sizes.medium
         });
     });
 
     it('should render a fullWidth version', () => {
         renderWithTheme(<Button $fullWidth>Any Text</Button>);
         expect(screen.getByRole('button', { name: 'Any Text' })).toHaveStyle({ width: '100%' });
+    });
+
+    it('should render a normal size when fullWidth explicitly passed as false', () => {
+        renderWithTheme(<Button $fullWidth={false}>Any Text</Button>);
+        expect(screen.getByRole('button', { name: 'Any Text' })).not.toHaveStyle({ width: '100%' });
     });
 
     it('should render an icon version', () => {
