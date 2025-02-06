@@ -3,6 +3,7 @@ import 'jest-styled-components';
 
 import React from 'react';
 
+// Mock Next Image
 jest.mock('next/image', () => ({
     __esModule: true,
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
